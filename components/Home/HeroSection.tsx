@@ -1,3 +1,4 @@
+import { Config } from '@/config'
 import React from 'react'
 
 function HeroSection() {
@@ -13,7 +14,7 @@ function HeroSection() {
         <div className='max-w-2xl space-y-6'>
 
           <h1 className="text-4xl md:text-7xl font-extrabold leading-tight drop-shadow-2xl">
-            М.Т.М.У <span className="text-green-500">№97</span>
+            М.Т.М.У <span className={`${Config.TextColor}`}>№97</span>
           </h1>
 
           <p className="text-lg md:text-2xl font-light text-gray-200 max-w-xl leading-relaxed">
@@ -21,10 +22,10 @@ function HeroSection() {
           </p>
 
           <div className='flex flex-wrap gap-4 pt-4'>
-            <button className='px-8 py-4 bg-green-600 hover:bg-green-700 text-white rounded-xl font-bold shadow-lg shadow-green-900/20 transition-all active:scale-95'>
+            <button className={`px-8 py-4 bg-${Config.ColorProject} hover:bg-green-700 text-white rounded-xl font-bold shadow-lg shadow-green-900/20 transition-all active:scale-95`}>
               Маълумоти бештар
             </button>
-            <button className='px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white rounded-xl font-bold transition-all'>
+            <button className={`px-8 py-4 bg-${Config.ColorProject}/10 hover:bg-${Config.ColorProject}/20 backdrop-blur-md border border-${Config.ColorProject}/80 text-white rounded-xl font-bold transition-all`}>
               Чашнҳои мо
             </button>
           </div>

@@ -1,3 +1,4 @@
+import { Config } from '@/config';
 import React from 'react'
 
 function TeachersSection() {
@@ -5,7 +6,7 @@ function TeachersSection() {
         {
             id: 1,
             title: "Ашурова Хайринисо",
-            description: "Аълочии маорифи Тоҷикистон, омӯзгори дараҷаи олӣ. Мутахассиси фанни забон ва адабиёти тоҷик, ки шогирдонаш ҳамасола дар олимпиадаҳои ҷумҳуриявӣ ҷойҳои намоёнро ишғол мекунанд.",
+            description: "Аълочии маорифи Тоҷикистон, омӯзгори дараҷаи олӣ. Мутахассиси фанни забони русси, ки шогирдонаш ҳамасола дар олимпиадаҳои ҷумҳуриявӣ ҷойҳои намоёнро ишғол мекунанд.",
             experience: "25 сол",
             slogan: "Забон ҳастии миллат аст",
             date: "25.04.2026",
@@ -41,13 +42,13 @@ function TeachersSection() {
     ];
     return (
         <section className="pb-20  bg-gray-50">
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-7xl mx-auto ">
                 <div className="flex md:flex-row flex-col justify-between md:items-end items-start md:gap-0 gap-4 mb-12">
                     <div>
                         <h2 className="text-3xl font-bold text-gray-900">Омӯзгорони соҳибтаҷриба</h2>
-                        <div className="h-1 w-20 bg-green-600 mt-2"></div>
+                        <div className={`h-1 w-20 bg-${Config.ColorProject} mt-2`}></div>
                     </div>
-                    <button className="text-green-600 font-semibold hover:underline">Ҳамаи омӯзгорон соҳибтаҷриба →</button>
+                    <button className={`${Config.TextColor} font-semibold hover:underline`}>Ҳамаи омӯзгорон соҳибтаҷриба →</button>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -60,18 +61,18 @@ function TeachersSection() {
                                     <span className="bg-white/90 backdrop-blur-sm text-green-700 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-sm border border-green-100">
                                         {item.date}
                                     </span>
-                                    <span className="bg-green-600 text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-md">
+                                    <span className={`bg-${Config.ColorProject} text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-md`}>
                                         {item.experience} таҷриба
                                     </span>
                                 </div>
                             </div>
 
                             <div className="p-6">
-                                <h3 className="text-xl font-bold text-gray-800 group-hover:text-green-600 transition-colors duration-300">
+                                <h3 className={`text-xl font-bold text-gray-800 group-hover:${Config.TextColor} transition-colors duration-300`}>
                                     {item.title}
                                 </h3>
 
-                                <p className="text-green-600 italic text-xs font-medium mt-1">
+                                <p className={`${Config.TextColor} italic text-xs font-medium mt-1`}>
                                    <span className='text-black'>Шиор:</span> "{item.slogan}"
                                 </p>
 

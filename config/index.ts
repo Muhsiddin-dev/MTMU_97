@@ -1,8 +1,8 @@
 
-export const config = {
+export const Config = {
     NameSchool: "M.T.M.U №97",
-    ColorProject: "bg-green-700/80",
-
+    ColorProject: "green-600",
+    TextColor: "text-green-600"
 }
 
 
