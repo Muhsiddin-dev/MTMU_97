@@ -1,8 +1,24 @@
-import React from 'react'
 
-function page() {
+import Location from '@/components/about/Location'
+import Stats from '@/components/about/Stats'
+import HeroSectionAbout from '@/components/about/HeroSectionAbout'
+import React from 'react'
+import SwipperAboutSection from '@/components/Swipper/SwipperAbout/SwipperAboutSection'
+
+
+async function delay(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function  page() {
+  await delay(5000);
   return (
-    <div>page</div>
+    <>
+      <HeroSectionAbout />
+      <Stats />
+      <SwipperAboutSection />
+      <Location />
+    </>
   )
 }
 

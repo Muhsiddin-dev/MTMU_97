@@ -1,8 +1,9 @@
+'use client'
 import { Config, routes } from '@/config'
 import Image from 'next/image'
 import Link from 'next/link'
 import { config } from 'process'
-import React from 'react'
+import React, { useState } from 'react'
 import {
     Sheet,
     SheetClose,
@@ -14,6 +15,7 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet"
 import { Menu } from 'lucide-react'
+import { usePathname } from "next/navigation";
 
 export const Pages = {
     Home: 'Асоси',
@@ -23,6 +25,8 @@ export const Pages = {
     About: "Дар бораи мо"
 }
 const Header = () => {
+    const pathname = usePathname();
+    const [open, setOpen] = useState(false);
     return (
         <header className="fixed font-sans top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-green-100">
             <nav className='md:flex hidden max-w-7xl mx-auto justify-between items-center py-3 '>
@@ -50,26 +54,35 @@ const Header = () => {
                 </Link>
 
                 <ul className='hidden md:flex items-center gap-8 text-sm font-medium text-gray-600'>
+
                     <Link href="/">
-                        <li className={`relative group cursor-pointer text-gray-700 transition-colors duration-300 hover:text-green-600`}>
+                        <li className={`relative group cursor-pointer transition-colors duration-300 ${pathname === "/" ? "text-green-600" : "text-gray-700 hover:text-green-600"}`}>
                             {Pages.Home}
-                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
+                            <span className={`absolute -bottom-1 left-0 h-0.5 bg-green-600 transition-all duration-300 ${pathname === "/" ? "w-full" : "w-0 group-hover:w-full"}`}></span>
                         </li>
                     </Link>
-                    <li className={`relative group cursor-pointer text-gray-700 transition-colors duration-300 hover:text-green-600`}>
-                        {Pages.Teachers}
-                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
-                    </li>
-                    <li className={`relative group cursor-pointer text-gray-700 transition-colors duration-300 hover:text-green-600`}>
-                        {Pages.Parti}
-                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
-                    </li>
+
+                    <Link href="/teachers">
+                        <li className={`relative group cursor-pointer transition-colors duration-300 ${pathname === "/teachers" ? "text-green-600" : "text-gray-700 hover:text-green-600"}`}>
+                            {Pages.Teachers}
+                            <span className={`absolute -bottom-1 left-0 h-0.5 bg-green-600 transition-all duration-300 ${pathname === "/teachers" ? "w-full" : "w-0 group-hover:w-full"}`}></span>
+                        </li>
+                    </Link>
+
+                    <Link href="/students">
+                        <li className={`relative group cursor-pointer transition-colors duration-300 ${pathname === "/students" ? "text-green-600" : "text-gray-700 hover:text-green-600"}`}>
+                            {Pages.Parti}
+                            <span className={`absolute -bottom-1 left-0 h-0.5 bg-green-600 transition-all duration-300 ${pathname === "/students" ? "w-full" : "w-0 group-hover:w-full"}`}></span>
+                        </li>
+                    </Link>
+
                     <Link href="/about">
-                        <li className={`relative group cursor-pointer text-gray-700 transition-colors duration-300 hover:text-green-600`}>
+                        <li className={`relative group cursor-pointer transition-colors duration-300 ${pathname === "/about" ? "text-green-600" : "text-gray-700 hover:text-green-600"}`}>
                             {Pages.About}
-                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
+                            <span className={`absolute -bottom-1 left-0 h-0.5 bg-green-600 transition-all duration-300 ${pathname === "/about" ? "w-full" : "w-0 group-hover:w-full"}`}></span>
                         </li>
                     </Link>
+
                 </ul>
 
                 <div className='flex gap-3 items-center'>
@@ -105,7 +118,7 @@ const Header = () => {
                     </div>
                 </Link>
 
-                <Sheet>
+                <Sheet open={open} onOpenChange={setOpen}>
                     <SheetTrigger><Menu /></SheetTrigger>
                     <SheetContent>
                         <SheetHeader className="text-left flex flex-col gap-4 py-4">
@@ -129,34 +142,32 @@ const Header = () => {
                                     </SheetDescription>
                                 </div>
                             </div>
-
-                            {/* Хатти ҷудокунанда (опционально) */}
                             <div className="h-px bg-gray-100 w-full mt-2" />
                         </SheetHeader>
                         <div className='px-4'>
                             <ul className='flex flex-col items-start gap-6 text-sm font-medium text-gray-600 mt-4'>
-                                <Link href="/">
-                                    <li className={`relative group cursor-pointer text-gray-700 transition-colors duration-300 hover:text-green-600`}>
+                                <Link href="/" onClick={() => setOpen(false)}>
+                                    <li className={`relative group cursor-pointer text-gray-700 transition-colors duration-300 hover:text-green-600 ${pathname === "/" ? "text-green-600" : "text-gray-700 hover:text-green-600"}`}>
                                         {Pages.Home}
-                                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
+                                        <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full ${pathname === "/" ? "w-full" : "w-0 group-hover:w-full"}`}></span>
                                     </li>
                                 </Link>
-                                <Link href="/teachers">
-                                    <li className={`relative group cursor-pointer text-gray-700 transition-colors duration-300 hover:text-green-600`}>
+                                <Link href="/teachers" onClick={() => setOpen(false)}>
+                                    <li className={`relative group cursor-pointer text-gray-700 transition-colors duration-300 hover:text-green-600 ${pathname === "/teachers" ? "text-green-600" : "text-gray-700 hover:text-green-600"}`}>
                                         {Pages.Teachers}
-                                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
+                                        <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full ${pathname === "/teachers" ? "w-full" : "w-0 group-hover:w-full"}`}></span>
                                     </li>
                                 </Link>
-                                <Link href="/students">
-                                    <li className={`relative group cursor-pointer text-gray-700 transition-colors duration-300 hover:text-green-600`}>
+                                <Link href="/students" onClick={() => setOpen(false)}>
+                                    <li className={`relative group cursor-pointer text-gray-700 transition-colors duration-300 hover:text-green-600 ${pathname === "/students" ? "text-green-600" : "text-gray-700 hover:text-green-600"}`}>
                                         {Pages.Students}
-                                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
+                                        <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full ${pathname === "/students" ? "w-full" : "w-0 group-hover:w-full"}`}></span>
                                     </li>
                                 </Link>
-                                <Link href="/about">
-                                    <li className={`relative group cursor-pointer text-gray-700 transition-colors duration-300 hover:text-green-600`}>
+                                <Link href="/about" onClick={() => setOpen(false)}>
+                                    <li className={`relative group cursor-pointer text-gray-700 transition-colors duration-300 hover:text-green-600 ${pathname === "/about" ? "text-green-600" : "text-gray-700 hover:text-green-600"}`}>
                                         {Pages.About}
-                                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
+                                        <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full ${pathname === "/about" ? "w-full" : "w-0 group-hover:w-full"}`}></span>
                                     </li>
                                 </Link>
                             </ul>

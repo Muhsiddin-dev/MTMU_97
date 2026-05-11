@@ -1,15 +1,16 @@
 import { Config } from '@/config';
+import Image from 'next/image';
 import React from 'react'
 import { text } from 'stream/consumers';
 
 function PartiSection() {
     const news = [
-        { id: 1, title: "Ғолибияти хонандагон дар олимпиада", description: "Хонандагони мактаби мо дар олимпиадаи шаҳрӣ сазовори ҷойҳои намоён гаштанд.", date: "25.04.2026", img: "/news1.jpg" },
-        { id: 2, title: "Ҷашни иди Наврӯз дар мактаб", description: "Хонандагони мо бо намоиши ҳунарҳои мардумӣ ва хони ҳафтсин омадани баҳорро пешвоз гирифтанд.", date: "21.03.2026", img: "/news2.jpg" },
-        { id: 3, title: "Маҷлиси падару модарон", description: "Дар муассиса маҷлиси умумии падару модарон оид ба натиҷаҳои таълим дар чоряки чорум ва омодагӣ ба имтиҳонҳои хатм баргузор гардад.", date: "10.05.2026", img: "/news3.jpg" },
+        { id: 1, title: "Ғолибияти хонандагон дар олимпиада", description: "Хонандагони мактаби мо дар олимпиадаи шаҳрӣ сазовори ҷойҳои намоён гаштанд.", date: "25.04.2026", img: "" },
+        { id: 2, title: "Ҷашни иди Наврӯз дар мактаб", description: "Хонандагони мо бо намоиши ҳунарҳои мардумӣ ва хони ҳафтсин омадани баҳорро пешвоз гирифтанд.", date: "21.03.2026", img: "" },
+        { id: 3, title: "Маҷлиси падару модарон", description: "Дар муассиса маҷлиси умумии падару модарон оид ба натиҷаҳои таълим дар чоряки чорум ва омодагӣ ба имтиҳонҳои хатм баргузор гардад.", date: "10.05.2026", img: "/imagecopy.png" },
     ];
     return (
-        <section className="pb-20  bg-gray-50">
+        <section className="pb-20  bg-gray-50 md:px-0 px-3">
             <div className="max-w-7xl mx-auto ">
                 <div className="flex justify-between items-end mb-12">
                     <div>
@@ -23,7 +24,13 @@ function PartiSection() {
                     {news.map((item) => (
                         <div key={item.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group cursor-pointer">
                             <div className="relative h-56 w-full overflow-hidden">
-                                <div className="absolute inset-0 bg-gray-200 animate-pulse group-hover:scale-110 transition-transform duration-500" />
+                                {
+                                    item.img ? (
+                                        <Image src={item.img} width={500} height={400} alt="" />
+                                    ) : (
+                                        <div className="absolute inset-0 bg-gray-200 animate-pulse group-hover:scale-110 transition-transform duration-500" />
+                                    )
+                                }
                                 <span className={`absolute top-4 left-4 z-10 bg-${Config.ColorProject} text-white text-xs px-3 py-1 rounded-full`}>{item.date}</span>
                             </div>
                             <div className="p-6">

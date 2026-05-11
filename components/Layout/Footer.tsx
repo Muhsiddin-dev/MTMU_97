@@ -6,7 +6,7 @@ import { Config } from '@/config'
 
 const Footer = () => {
   return (
-    <footer className=' px-3 py-6 bg-white font-sans'>
+    <footer className=' px-3 py-6 bg-white font-sans border border-t-gray-100 '>
       <div className='flex md:flex-row flex-col md:gap-0 gap-5 max-w-7xl m-auto justify-between items-start'>
         <div className='flex flex-col gap-5'>
           <Link href="/">

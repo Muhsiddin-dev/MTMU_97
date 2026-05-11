@@ -41,7 +41,7 @@ function TeachersSection() {
         }
     ];
     return (
-        <section className="pb-20  bg-gray-50">
+        <section className="pb-20 md:px-0 px-3 bg-gray-50">
             <div className="max-w-7xl mx-auto ">
                 <div className="flex md:flex-row flex-col justify-between md:items-end items-start md:gap-0 gap-4 mb-12">
                     <div>
