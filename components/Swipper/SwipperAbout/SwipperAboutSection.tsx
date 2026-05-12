@@ -6,6 +6,7 @@ import Image from "next/image";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { Config } from "@/config";
 
 export default function SwipperAboutSection() {
   const images = [
@@ -17,7 +18,7 @@ export default function SwipperAboutSection() {
   ];
 
   return (
-    <div className="w-full md:px-0 px-3 py-10 bg-gray-50 ">
+    <div className={`w-full md:px-0 px-3 py-10 bg-gray-50  dark:bg-${Config.DarkColorProject}`}>
       <div className="max-w-7xl m-auto ">
         <Swiper
           modules={[Autoplay, Pagination, Navigation]}

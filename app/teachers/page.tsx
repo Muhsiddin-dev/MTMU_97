@@ -2,11 +2,16 @@ import AdministrationPage from '@/components/about/AdministrationPage'
 import TeachersSection from '@/components/Teachers/TeachersSection'
 import React from 'react'
 
-function page() {
+async function delay(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function page() {
+  await delay(2000);
   return (
     <section>
-        <AdministrationPage />
-        <TeachersSection />
+      <AdministrationPage />
+      <TeachersSection />
     </section>
   )
 }

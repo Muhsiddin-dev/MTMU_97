@@ -10,7 +10,7 @@ function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
       </div>
 
-      <div className='relative z-10 flex flex-col max-w-7xl mx-auto px-6 h-full justify-center text-white'>
+      <div className='relative z-10 flex flex-col max-w-7xl mx-auto px-6 h-full justify-center text-white '>
         <div className='max-w-2xl space-y-6'>
 
           <h1 className="text-4xl md:text-7xl font-extrabold leading-tight drop-shadow-2xl">

@@ -5,65 +5,35 @@ import { NumberTicker } from '../ui/number-ticker'
 
 function Stats() {
     return (
-        <section className='bg-gray-50 py-10 relative'>
+        <section className="bg-gray-50 dark:bg-[#0a0a0a] py-10 relative transition-colors duration-300">
             <div className="relative z-20 mx-auto max-w-6xl w-full px-4">
                 {/* Контейнери асосӣ */}
-                <div className="-mt-20 md:-mt-24 bg-white rounded-3xl shadow-2xl shadow-gray-200/50 border border-gray-100 p-6 md:p-10">
+                <div className="-mt-20 md:-mt-24 bg-white dark:bg-[#0f0f0f] rounded-3xl shadow-2xl shadow-gray-200/50 dark:shadow-none border border-gray-100 dark:border-neutral-800 p-6 md:p-10 transition-all">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 md:gap-0 text-center">
 
-                        {/* 1. Таҷриба */}
-                        <div className="space-y-3 px-4 flex flex-col items-center group border-r border-gray-100 last:border-r-0 md:border-r">
-                            <div className={`p-3 rounded-2xl bg-green-50 ${Config.TextColor} group-hover:scale-110 transition-transform`}>
-                                <Award size={28} />
-                            </div>
-                            <div>
-                                <div className="flex items-center justify-center gap-1">
-                                    <NumberTicker value={13} className="text-2xl md:text-3xl font-extrabold text-gray-800" />
-                                    <span className="text-2xl md:text-3xl font-extrabold text-gray-800">сол</span>
+                        {/* Элементи статстика (намуна барои ҳама) */}
+                        {[
+                            { id: 1, label: 'Таҷриба', value: 13, suffix: 'сол', Icon: Award },
+                            { id: 2, label: 'Хонандагон', value: 1200, suffix: '+', Icon: Users },
+                            { id: 3, label: 'Омӯзгорон', value: 85, suffix: '+', Icon: GraduationCap },
+                            { id: 4, label: 'Синфхонаҳо', value: 40, suffix: '+', Icon: School },
+                        ].map(({ id, label, value, suffix, Icon }) => (
+                            <div key={id} className="space-y-3 px-4 flex flex-col items-center group border-gray-100 dark:border-neutral-800 border-r last:border-r-0 odd:border-r md:even:border-r">
+                                <div className="p-3 rounded-2xl bg-green-50 dark:bg-green-500/10 text-green-600 dark:text-green-500 group-hover:scale-110 transition-transform">
+                                    <Icon size={28} />
                                 </div>
-                                <p className="text-xs md:text-sm text-gray-500 font-medium uppercase tracking-wider">Таҷриба</p>
-                            </div>
-                        </div>
-
-                        <div className="space-y-3 px-4 flex flex-col items-center group border-r-0 md:border-r border-gray-100">
-                            <div className={`p-3 rounded-2xl bg-green-50 ${Config.TextColor} group-hover:scale-110 transition-transform`}>
-                                <Users size={28} />
-                            </div>
-                            <div>
-                                <div className="flex items-center justify-center gap-1">
-                                    <NumberTicker value={1200} className="text-2xl md:text-3xl font-extrabold text-gray-800" />
-                                    <span className="text-2xl md:text-3xl font-extrabold text-gray-800">+</span>
+                                <div>
+                                    <div className="flex items-center justify-center gap-1">
+                                        <NumberTicker
+                                            value={value}
+                                            className="text-2xl md:text-3xl font-extrabold text-gray-800 dark:text-gray-100"
+                                        />
+                                        <span className="text-2xl md:text-3xl font-extrabold text-gray-800 dark:text-gray-100">{suffix}</span>
+                                    </div>
+                                    <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wider">{label}</p>
                                 </div>
-                                <p className="text-xs md:text-sm text-gray-500 font-medium uppercase tracking-wider">Хонандагон</p>
                             </div>
-                        </div>
-
-                        <div className="space-y-3 px-4 flex flex-col items-center group border-r border-gray-100 last:border-r-0 md:border-r">
-                            <div className={`p-3 rounded-2xl bg-green-50 ${Config.TextColor} group-hover:scale-110 transition-transform`}>
-                                <GraduationCap size={28} />
-                            </div>
-                            <div>
-                                <div className="flex items-center justify-center gap-1">
-                                    <NumberTicker value={85} className="text-2xl md:text-3xl font-extrabold text-gray-800" />
-                                    <span className="text-2xl md:text-3xl font-extrabold text-gray-800">+</span>
-                                </div>
-                                <p className="text-xs md:text-sm text-gray-500 font-medium uppercase tracking-wider">Омӯзгорон</p>
-                            </div>
-                        </div>
-
-                        {/* 4. Синфхонаҳо */}
-                        <div className="space-y-3 px-4 flex flex-col items-center group">
-                            <div className={`p-3 rounded-2xl bg-green-50 ${Config.TextColor} group-hover:scale-110 transition-transform`}>
-                                <School size={28} />
-                            </div>
-                            <div>
-                                <div className="flex items-center justify-center gap-1">
-                                    <NumberTicker value={40} className="text-2xl md:text-3xl font-extrabold text-gray-800" />
-                                    <span className="text-2xl md:text-3xl font-extrabold text-gray-800">+</span>
-                                </div>
-                                <p className="text-xs md:text-sm text-gray-500 font-medium uppercase tracking-wider">Синфхонаҳо</p>
-                            </div>
-                        </div>
+                        ))}
 
                     </div>
                 </div>

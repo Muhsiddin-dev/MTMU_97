@@ -10,8 +10,8 @@ async function delay(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function  page() {
-  await delay(5000);
+async function page() {
+  await delay(2000);
   return (
     <>
       <HeroSectionAbout />
