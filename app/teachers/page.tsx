@@ -1,4 +1,4 @@
-import AdministrationPage from '@/components/about/AdministrationPage'
+import AdministrationPage from '@/components/Teachers/AdministrationPage'
 import TeachersSection from '@/components/Teachers/TeachersSection'
 import React from 'react'
 

@@ -11,14 +11,13 @@ function Stats() {
                 <div className="-mt-20 md:-mt-24 bg-white dark:bg-[#0f0f0f] rounded-3xl shadow-2xl shadow-gray-200/50 dark:shadow-none border border-gray-100 dark:border-neutral-800 p-6 md:p-10 transition-all">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 md:gap-0 text-center">
 
-                        {/* Элементи статстика (намуна барои ҳама) */}
                         {[
                             { id: 1, label: 'Таҷриба', value: 13, suffix: 'сол', Icon: Award },
                             { id: 2, label: 'Хонандагон', value: 1200, suffix: '+', Icon: Users },
                             { id: 3, label: 'Омӯзгорон', value: 85, suffix: '+', Icon: GraduationCap },
                             { id: 4, label: 'Синфхонаҳо', value: 40, suffix: '+', Icon: School },
                         ].map(({ id, label, value, suffix, Icon }) => (
-                            <div key={id} className="space-y-3 px-4 flex flex-col items-center group border-gray-100 dark:border-neutral-800 border-r last:border-r-0 odd:border-r md:even:border-r">
+                            <div key={id} className="space-y-3 px-4 flex flex-col items-center group border-gray-100 dark:border-neutral-800 border-r last:border-r-0 odd:border-r">
                                 <div className="p-3 rounded-2xl bg-green-50 dark:bg-green-500/10 text-green-600 dark:text-green-500 group-hover:scale-110 transition-transform">
                                     <Icon size={28} />
                                 </div>

@@ -1,7 +1,10 @@
+"use client"
 import { Config } from '@/config';
+import { useRouter } from 'next/navigation';
 import React from 'react'
 
 function TeachersSection() {
+    const router = useRouter()
     const teachers = [
         {
             id: 1,
@@ -53,7 +56,7 @@ function TeachersSection() {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {teachers.map((item) => (
-                        <div key={item.id} className={`bg-white dark:bg-${Config.DarkColorProject}   rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 group cursor-pointer border border-gray-100 dark:border-neutral-800`}>
+                        <div onClick={() => router.push(`/teachers/${item.id}`)} key={item.id} className={`bg-white dark:bg-${Config.DarkColorProject}   rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 group cursor-pointer border border-gray-100 dark:border-neutral-800`}>
                             <div className="relative h-64 w-full overflow-hidden">
                                 <div className="absolute inset-0 bg-gray-200 dark:bg-[#010101] animate-pulse group-hover:scale-110 transition-transform duration-500" />
 

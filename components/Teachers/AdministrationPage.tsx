@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import {  Mail, Phone, Award, Star } from 'lucide-react';
+import { Mail, Phone, Award, Star } from 'lucide-react';
 import { InteractiveHoverButton } from '../ui/interactive-hover-button';
+import Link from 'next/link';
 
 const administration = [
     {
@@ -76,13 +77,18 @@ export default function AdministrationPage() {
                                     </p>
 
                                     <div className="flex flex-wrap gap-5 pt-6">
-                                        <InteractiveHoverButton>Маълумоти пурра </InteractiveHoverButton>
+                                        <Link href={`/teachers/${director.id}`}>
+                                            <InteractiveHoverButton>
+                                                Маълумоти пурра
+                                            </InteractiveHoverButton>
+                                        </Link>
+
 
                                         <div className="flex gap-3">
-                                            <button className="p-5 border border-gray-100 dark:border-neutral-600 rounded-2xl hover:bg-white dark:hover:bg-neutral-700 hover:shadow-md transition-all text-gray-600 dark:text-white dark:hover:text-green-600 hover:text-green-600">
+                                            <button className="p-5 border border-gray-100 dark:border-neutral-600 rounded-2xl hover:bg-white dark:hover:bg-neutral-700 hover:shadow-md transition-all text-gray-600 dark:text-white dark:hover:text-green-600 duration-300 hover:text-green-600 duration-300">
                                                 <Mail size={24} />
                                             </button>
-                                            <button className="p-5 border border-gray-100 dark:border-neutral-600 rounded-2xl hover:bg-white dark:hover:bg-neutral-700 hover:shadow-md transition-all text-gray-600 dark:text-white dark:hover:text-green-600 hover:text-green-600">
+                                            <button className="p-5 border border-gray-100 dark:border-neutral-600 rounded-2xl hover:bg-white dark:hover:bg-neutral-700 hover:shadow-md transition-all text-gray-600 dark:text-white dark:hover:text-green-600 duration-300 hover:text-green-600 duration-300">
                                                 <Phone size={24} />
                                             </button>
                                         </div>

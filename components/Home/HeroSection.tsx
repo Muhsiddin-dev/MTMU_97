@@ -1,4 +1,5 @@
-import { Config } from '@/config'
+import { Config, routes } from '@/config'
+import Link from 'next/link'
 import React from 'react'
 
 function HeroSection() {
@@ -22,9 +23,11 @@ function HeroSection() {
           </p>
 
           <div className='flex flex-wrap gap-4 pt-4'>
-            <button className={`px-8 py-4 bg-${Config.ColorProject} hover:bg-green-700 text-white rounded-xl font-bold shadow-lg shadow-green-900/20 transition-all active:scale-95`}>
-              Маълумоти бештар
-            </button>
+            <Link href={routes.About}>
+              <button className={`px-8 py-4 bg-${Config.ColorProject} hover:bg-green-700 text-white rounded-xl font-bold shadow-lg shadow-green-900/20 transition-all active:scale-95`}>
+                Маълумоти бештар
+              </button>
+            </Link>
             <button className={`px-8 py-4 bg-${Config.ColorProject}/10 hover:bg-${Config.ColorProject}/20 backdrop-blur-md border border-${Config.ColorProject}/80 text-white rounded-xl font-bold transition-all`}>
               Чашнҳои мо
             </button>
