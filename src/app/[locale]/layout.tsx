@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import LayoutWrapper from "@/src/components/Layout/LayoutWrapper";
+import { notFound } from "next/navigation";
+import { Geist, Geist_Mono } from "next/font/google";
 
 
 const geistSans = Geist({
@@ -65,7 +66,7 @@ export const metadata: Metadata = {
   },
 
   verification: {
-    google: "Cc9bk_ELavsOO7Fvf0uveKmJUNrPi8Xr61cUBsCg3XY", 
+    google: "Cc9bk_ELavsOO7Fvf0uveKmJUNrPi8Xr61cUBsCg3XY",
   },
 
   category: "education",
@@ -79,11 +80,43 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{
+  params
+}: {
   children: React.ReactNode;
-}>) {
+  params: Promise<{ locale: string }>;
+}) {
+  let resolvedParams: any;
+  try {
+    resolvedParams = await params;
+  } catch (error) {
+    console.error('Error awaiting params:', error);
+    notFound();
+  }
+
+  const locale = resolvedParams?.locale;
+
+
+  if (!locale) {
+    console.error('No locale found in params');
+    notFound();
+  }
+
+  const locales = ['en', 'ru', 'tj'];
+  if (!locales.includes(locale)) {
+    notFound();
+  }
+
+  let messages: any = {};
+  if (locale === 'en') {
+    messages = (await import('./../../messages/en.json')).default;
+  } else if (locale === 'ru') {
+    messages = (await import('./../../messages/ru.json')).default;
+  } else if (locale === 'tj') {
+    messages = (await import('./../../messages/tj.json')).default;
+  }
+
   return (
     <html lang="tg" className="h-full">
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased min-h-full flex flex-col`}>

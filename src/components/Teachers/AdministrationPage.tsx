@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { Mail, Phone, Award, Star } from 'lucide-react';
 import { InteractiveHoverButton } from '../ui/interactive-hover-button';
-import Link from 'next/link';
+import Link from "next/link";;
 
 const administration = [
     {

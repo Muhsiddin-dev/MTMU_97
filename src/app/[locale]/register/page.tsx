@@ -1,7 +1,7 @@
 import { Input } from '@/src/components/ui/input'
 import { routes } from '@/config'
 import Image from 'next/image'
-import Link from 'next/link'
+import Link from "next/link";
 import React from 'react'
 
 function page() {

@@ -4,22 +4,23 @@ import Footer from "./Footer";
 import Header from "./Header";
 
 export default function LayoutWrapper({ children }: { children: React.ReactNode }) {
-    const pathename = usePathname()
+    const pathname = usePathname();
+    const hideLayout = pathname?.includes('/admin');
     return (
         <>
-            {/* {
-            pathename !== '/login' && (
-                )
-        } */}
-            <Header />
-            <main className="grow">
-                {children}
-            </main>
-            <Footer />
-            {/* {
-            pathename !== '/login' && (
-            )
-        } */}
+            {!hideLayout ? (
+                <>
+                    <Header />
+                    <main className="grow">
+                        {children}
+                    </main>
+                    <Footer />
+                </>
+            ) : (
+                <main className="grow">
+                    {children}
+                </main>
+            )}
         </>
     )
 }

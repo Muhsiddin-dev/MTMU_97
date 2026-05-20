@@ -1,5 +1,5 @@
 import { Config, routes } from '@/config'
-import Link from 'next/link'
+import Link from "next/link";
 import React from 'react'
 
 function HeroSection() {

@@ -1,8 +1,8 @@
 'use client'
 import { Config, routes } from '@/config'
 import Image from 'next/image'
-import Link from 'next/link'
-import  { useState } from 'react'
+import Link from "next/link";
+import { useState } from 'react'
 import {
     Sheet,
     SheetContent,
@@ -11,10 +11,10 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/src/components/ui/sheet"
-import { ChevronDown, Menu} from 'lucide-react'
-import { usePathname, useRouter } from "next/navigation";
+import { ChevronDown, Menu } from 'lucide-react'
 import { AnimatedThemeToggler } from '../ui/animated-theme-toggler'
-import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger } from '@/components/ui/menubar'
+import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger } from '@/src/components/ui/menubar'
+import { usePathname, useRouter } from 'next/navigation';
 
 export const Pages = {
     Home: 'Асоси',
@@ -28,6 +28,8 @@ const Header = () => {
     const router = useRouter();
     const [open, setOpen] = useState(false);
     const FlagTJ = "/tj.jpg";
+    const currentLocale = pathname.split("/")[1] || "tj";
+    const currentPath = pathname.replace(/^\/(tj|ru|en)/, "") || "/";
     const FlagEN = "/america.jpg"
     const FlagRu = "/russia.jpg";
     const languages = [
@@ -35,7 +37,6 @@ const Header = () => {
         { code: "ru", label: "Русский", flag: FlagRu },
         { code: "en", label: "English", flag: FlagEN },
     ];
-    const currentLocale = pathname.split("/")[1] || "tj";
     const currentLang = languages.find((l) => l.code === currentLocale) || languages[0];
     const changeLanguage = (newLocale: string) => {
         const segments = pathname.split("/");
@@ -49,7 +50,7 @@ const Header = () => {
 
                 <Link href={routes.Home}>
                     <div className='flex items-center gap-3 cursor-pointer'>
-                        <div className='bg-${Config.ColorProject} w-12 h-12 rounded-xl flex items-center justify-center shadow-lg shadow-green-100 dark:shadow-none'>
+                        <div className={`bg-${Config.ColorProject} w-12 h-12 rounded-xl flex items-center justify-center shadow-lg shadow-green-100 dark:shadow-none`}>
                             <Image
                                 src="/mtmu_97.png"
                                 alt="Logo"
@@ -72,30 +73,30 @@ const Header = () => {
                 <ul className='hidden md:flex items-center gap-8 text-sm font-medium text-gray-600  dark:text-white'>
 
                     <Link href={routes.Home}>
-                        <li className={`relative group cursor-pointer transition-colors duration-300 ${pathname === "/" ? "text-green-600" : "text-gray-700 dark:text-white hover:text-green-600 duration-300"}`}>
+                        <li className={`relative group cursor-pointer transition-colors duration-300 ${currentPath === "/" ? "text-green-600" : "text-gray-700 dark:text-white hover:text-green-600 duration-300"}`}>
                             {Pages.Home}
-                            <span className={`absolute -bottom-1 left-0 h-0.5 bg-green-600 transition-all duration-300 ${pathname === "/" ? "w-full" : "w-0 group-hover:w-full"}`}></span>
+                            <span className={`absolute -bottom-1 left-0 h-0.5 bg-green-600 transition-all duration-300 ${currentPath === "/" ? "w-full" : "w-0 group-hover:w-full"}`}></span>
                         </li>
                     </Link>
 
                     <Link href={routes.Teachers}>
-                        <li className={`relative group cursor-pointer transition-colors duration-300 ${pathname === "/teachers" ? "text-green-600" : "text-gray-700 dark:text-white hover:text-green-600 duration-300"}`}>
+                        <li className={`relative group cursor-pointer transition-colors duration-300 ${currentPath === "/teachers" ? "text-green-600" : "text-gray-700 dark:text-white hover:text-green-600 duration-300"}`}>
                             {Pages.Teachers}
-                            <span className={`absolute -bottom-1 left-0 h-0.5 bg-green-600 transition-all duration-300 ${pathname === "/teachers" ? "w-full" : "w-0 group-hover:w-full"}`}></span>
+                            <span className={`absolute -bottom-1 left-0 h-0.5 bg-green-600 transition-all duration-300 ${currentPath === "/teachers" ? "w-full" : "w-0 group-hover:w-full"}`}></span>
                         </li>
                     </Link>
 
                     <Link href={routes.Celebrations}>
-                        <li className={`relative group cursor-pointer transition-colors duration-300 ${pathname === "/celebrations" ? "text-green-600" : "text-gray-700 dark:text-white hover:text-green-600 duration-300"}`}>
+                        <li className={`relative group cursor-pointer transition-colors duration-300 ${currentPath === "/celebrations" ? "text-green-600" : "text-gray-700 dark:text-white hover:text-green-600 duration-300"}`}>
                             {Pages.celebrations}
-                            <span className={`absolute -bottom-1 left-0 h-0.5 bg-green-600 transition-all duration-300 ${pathname === "/celebrations" ? "w-full" : "w-0 group-hover:w-full"}`}></span>
+                            <span className={`absolute -bottom-1 left-0 h-0.5 bg-green-600 transition-all duration-300 ${currentPath === "/celebrations" ? "w-full" : "w-0 group-hover:w-full"}`}></span>
                         </li>
                     </Link>
 
                     <Link href={routes.About}>
-                        <li className={`relative group cursor-pointer transition-colors duration-300 ${pathname === "/about" ? "text-green-600" : "text-gray-700 dark:text-white hover:text-green-600 duration-300"}`}>
+                        <li className={`relative group cursor-pointer transition-colors duration-300 ${currentPath === "/about" ? "text-green-600" : "text-gray-700 dark:text-white hover:text-green-600 duration-300"}`}>
                             {Pages.About}
-                            <span className={`absolute -bottom-1 left-0 h-0.5 bg-green-600 transition-all duration-300 ${pathname === "/about" ? "w-full" : "w-0 group-hover:w-full"}`}></span>
+                            <span className={`absolute -bottom-1 left-0 h-0.5 bg-green-600 transition-all duration-300 ${currentPath === "/about" ? "w-full" : "w-0 group-hover:w-full"}`}></span>
                         </li>
                     </Link>
 
@@ -218,7 +219,7 @@ const Header = () => {
                                         { href: "/celebrations", label: Pages.celebrations },
                                         { href: "/about", label: Pages.About },
                                     ].map((link) => {
-                                        const isActive = pathname === link.href;
+                                        const isActive = currentPath === link.href;
                                         return (
                                             <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>
                                                 <li

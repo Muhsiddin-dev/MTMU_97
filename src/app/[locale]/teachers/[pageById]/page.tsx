@@ -1,7 +1,6 @@
 "use client"
 import Image from 'next/image';
 import { Mail, Phone, Award, Star } from 'lucide-react';
-import Link from 'next/link';
 import { InteractiveHoverButton } from '@/src/components/ui/interactive-hover-button';
 import { usePathname } from 'next/navigation';
 
