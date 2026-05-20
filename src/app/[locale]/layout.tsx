@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     description: "Муассисаи таҳсилоти миёнаи умумии №97-и шаҳри Душанбе. Маълумот дар бораи қабул, омӯзгорон, синфхонаҳо ва дастовардҳои хонандагон. Ояндаи фарзанди худро бо мо созед!",
     images: [
       {
-        url: "https://mtmu97.tj/mtmu_97.png",
+        url: "https://mtmu-97.vercel.app/mtmu_97.png",
         width: 1200,
         height: 630,
         alt: "Бинои МТМУ №97 Душанбе",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "МТМУ №97 | Ба номи профессор Оев Абдулҳақ Мансурович",
     description: "Муассисаи таҳсилоти миёнаи умумии №97-и шаҳри Душанбе. Маълумот дар бораи қабул, омӯзгорон, синфхонаҳо ва дастовардҳои хонандагон. Ояндаи фарзанди худро бо мо созед!",
-    images: ["https://mtmu97.tj/mtmu_97.png"],
+    images: ["https://mtmu-97.vercel.app/mtmu_97.png"],
   },
 
   verification: {
