@@ -36,7 +36,7 @@ function CelebrationsPage() {
                 <button
                     className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-2.5 rounded-xl font-bold transition-all shadow-lg shadow-blue-600/20 active:scale-95"
                 >
-                    <Plus size={20} /> Иловаи ҷашн
+                    <Plus size={20} /> Иловаи ҷашнхо
                 </button>
             </div>
 
