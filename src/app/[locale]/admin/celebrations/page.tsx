@@ -41,7 +41,7 @@ function CelebrationsPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {events?.data?.map((item) => (
+                {events?.map((item) => (
                     <div key={item.id} className={`bg-white dark:bg-[#0f0f0f] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group cursor-pointer`}>
                         <div className="relative h-56 w-full overflow-hidden">
                             {

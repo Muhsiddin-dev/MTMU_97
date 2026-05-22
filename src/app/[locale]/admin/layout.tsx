@@ -1,3 +1,4 @@
+"use client"
 import LayoutWrapper from "@/src/components/Layout/LayoutWrapper";
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
