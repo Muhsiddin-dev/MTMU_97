@@ -45,8 +45,8 @@ function CelebrationsPage() {
                     <div key={item.id} className={`bg-white dark:bg-[#0f0f0f] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group cursor-pointer`}>
                         <div className="relative h-56 w-full overflow-hidden">
                             {
-                                item.img ? (
-                                    <Image src={item.img} width={500} height={400} alt="" />
+                                item.images && item.images.length > 0 ? (
+                                    <img src={`https://to-dos-api.softclub.tj/images/${item.images[0].imageName}`} width={500} height={400} alt="" />
                                 ) : (
                                     <div className={`absolute inset-0 bg-gray-200 dark:bg-[#010101] animate-pulse group-hover:scale-110 transition-transform duration-500`} />
                                 )
