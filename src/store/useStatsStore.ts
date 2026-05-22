@@ -1,10 +1,15 @@
 import { create } from 'zustand';
-import { getStats } from '../api/stats';
+import { getCelebrations } from '../api/celebrations';
 
-export const useStatsStore = create((set) => ({
-  stats: [],
-  fetchStats: async () => {
-    const data = await getStats();
-    set({ stats: data });
+interface CelebrationState {
+  events: any[];
+  fetchEvents: () => Promise<void>;
+}
+
+export const useCelebrationStore = create<CelebrationState>((set) => ({
+  events: [],
+  fetchEvents: async () => {
+    const data = await getCelebrations(); 
+    set({ events: data });
   },
 }));
