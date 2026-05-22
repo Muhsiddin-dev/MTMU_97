@@ -51,7 +51,7 @@ function CelebrationsPage() {
                                     <div className={`absolute inset-0 bg-gray-200 dark:bg-[#010101] animate-pulse group-hover:scale-110 transition-transform duration-500`} />
                                 )
                             }
-                            <span className={`absolute top-4 left-4 z-10 bg-${Config.ColorProject} text-white text-xs px-3 py-1 rounded-full`}>{item.date}</span>
+                            <span className={`absolute top-4 left-4 z-10 bg-${Config.ColorProject} text-white text-xs px-3 py-1 rounded-full`}>{item.name}</span>
                         </div>
                         <div className="p-6">
                             <h3 className={`text-xl font-bold text-gray-800 dark:text-white group-hover:${Config.TextColor} transition-colors`}>
