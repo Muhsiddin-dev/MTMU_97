@@ -7,8 +7,8 @@ import { Pages } from './Header'
 const Footer = () => {
   return (
     <footer className={` px-3 py-6 bg-white dark:border-t dark:border-neutral-800 dark:bg-${Config.DarkColorProject} font-sans border border-t-gray-100 `}>
-      <div className='flex md:flex-row flex-col md:gap-0 gap-5 max-w-7xl m-auto justify-between items-start'>
-        <div className='flex flex-col gap-5'>
+      <div className='flex md:flex-row flex-col  md:gap-0 gap-5 max-w-7xl m-auto justify-between items-start sm:items-center sm:text-center md:text-left'>
+        <div className='flex flex-col sm:items-center md:items-start  gap-5'>
           <Link href={routes.Home}>
             <div className='flex items-center gap-2.5 cursor-pointer'>
               <div className={`bg-green-600 w-12 h-12 rounded-xl flex items-center justify-center shadow-lg dark:shadow shadow-green-100 dark:shadow-${Config.DarkColorProject}`}>
@@ -32,7 +32,7 @@ const Footer = () => {
           </Link>
 
           <div>
-            <p className='text-black dark:text-white dark:text-white text-sm font-medium'>Муассисаи Таҳсилоти Миёнаи Умумии №97 <br /> Ба Номи Прафесор Оев Абдуллхақ Мансурович</p>
+            <p className='text-black dark:text-white  text-sm font-medium'>Муассисаи Таҳсилоти Миёнаи Умумии №97 <br /> Ба Номи Прафесор Оев Абдуллхақ Мансурович</p>
           </div>
 
           <div className='flex gap-4 text-black dark:text-white '>

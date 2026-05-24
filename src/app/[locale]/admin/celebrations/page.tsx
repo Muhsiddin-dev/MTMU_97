@@ -6,8 +6,12 @@ import Image from 'next/image'
 import { Config } from '@/config'
 import { useCelebrationStore } from '@/src/store/useStatsStore'
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/src/components/ui/input'
 
 function CelebrationsPage() {
+    const [IsOpenDialogStatus, setIsOpenDialogStatus] = useState(false)
+    const [IsOpenDialogDelete, setIsOpenDialogDelete] = useState(false)
     // Маълумоти намунавӣ (Mock Data)
     // const [events, setEvents] = useState([
     //     { id: 1, title: "Ғолибияти хонандагон дар олимпиада", description: "Хонандагони мактаби мо дар олимпиадаи шаҳрӣ сазовори ҷойҳои намоён гаштанд.", date: "25.04.2026", img: "" },
@@ -62,12 +66,56 @@ function CelebrationsPage() {
                             </p>
                         </div>
                         <div className='px-6 pb-2 flex items-center justify-between'>
-                            <input className='size-4' type="checkbox" />
-                            <button className='text-green-600'>
-                                <Pencil />
-                            </button>
-                            <Dialog>
-                                <DialogTrigger><Trash className='text-red-600' /></DialogTrigger>
+                            <Dialog open={IsOpenDialogStatus} onOpenChange={setIsOpenDialogStatus}>
+                                <DialogTrigger><input className='size-4 text-red-600 hover:cursor-pointer hover:scale-90 transition-all duration-300' type="checkbox" /></DialogTrigger><DialogContent>
+                                    <DialogHeader>
+                                        <DialogTitle className='line-clamp-2 text-xl font-bold'>
+                                            {item.name}
+                                        </DialogTitle>
+                                        <DialogDescription>
+                                            ОЁ шумо мехохед ки {item.name} Дар Бозор нишон дихед?
+                                        </DialogDescription>
+                                    </DialogHeader>
+                                    <DialogFooter>
+                                        <Button type='button' className='text-white hover:text-white/70 px-4 py-2 rounded-md transition-colors' onClick={() => setIsOpenDialogDelete(false)}>Ба қафо</Button>
+                                        <Button className='text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-md transition-colors' onClick={() => { }}>Бале</Button>
+                                    </DialogFooter>
+                                </DialogContent>
+                            </Dialog>
+
+                            <Dialog open={IsOpenDialogStatus} onOpenChange={setIsOpenDialogStatus}>
+                                <DialogTrigger><Pencil className=' text-green-600 hover:cursor-pointer hover:scale-90 transition-all duration-300' type="checkbox" /></DialogTrigger>
+                                <DialogContent>
+                                    <DialogHeader>
+                                        <DialogTitle className='line-clamp-2 text-xl font-bold'>
+                                            {item.name}
+                                        </DialogTitle>
+                                        <DialogDescription>
+                                            Оё шумо мехохед ки {item.name} - ро Иваз кунед?
+                                        </DialogDescription>
+                                    </DialogHeader>
+                                    <div className='flex flex-col space-y-3'>
+                                        <div className='flex flex-col gap-1 '>
+                                            <label className='text-sm font-medium text-gray-700 dark:text-gray-300 ml-1'>Номи Чорабинӣ</label>
+                                            <Input type="text" />
+                                        </div>
+                                        <div className='flex flex-col gap-1 '>
+                                            <label className='text-sm font-medium text-gray-700 dark:text-gray-300 ml-1'>Дар бораи</label>
+                                            <textarea typeof='text' />
+                                        </div>
+                                        <div className='flex flex-col gap-1 '>
+                                            <label className='text-sm font-medium text-gray-700 dark:text-gray-300 ml-1'>Сана</label>
+                                            <Input type="text" />
+                                        </div>
+                                    </div>
+                                    <DialogFooter>
+                                        <Button type='button' className='text-white hover:text-white/70 px-4 py-2 rounded-md transition-colors' onClick={() => setIsOpenDialogDelete(false)}>Ба қафо</Button>
+                                        <Button className='text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-md transition-colors' onClick={() => { }}>Бале</Button>
+                                    </DialogFooter>
+                                </DialogContent>
+                            </Dialog>
+                            <Dialog open={IsOpenDialogDelete} onOpenChange={setIsOpenDialogDelete}>
+                                <DialogTrigger><Trash className='text-red-600 hover:cursor-pointer hover:scale-90 transition-all duration-300' /></DialogTrigger>
                                 <DialogContent>
                                     <DialogHeader>
                                         <DialogTitle className='line-clamp-2 text-xl font-bold'>
@@ -78,8 +126,8 @@ function CelebrationsPage() {
                                         </DialogDescription>
                                     </DialogHeader>
                                     <DialogFooter>
-                                        <button className='text-gray-500 hover:text-gray-700 px-4 py-2 rounded-md transition-colors' onClick={() => { }}>Ба қафо</button>
-                                        <button className='text-white bg-red-600 hover:bg-red-700 px-4 py-2 rounded-md transition-colors' onClick={() => { }}>Бале</button>
+                                        <Button type='button' className='text-white hover:text-white/70 px-4 py-2 rounded-md transition-colors' onClick={() => setIsOpenDialogDelete(false)}>Ба қафо</Button>
+                                        <Button className='text-white bg-red-600 hover:bg-red-700 px-4 py-2 rounded-md transition-colors' onClick={() => { }}>Бале</Button>
                                     </DialogFooter>
                                 </DialogContent>
                             </Dialog>

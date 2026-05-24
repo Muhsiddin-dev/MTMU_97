@@ -1,6 +1,9 @@
+"use client"
 import { Input } from '@/src/components/ui/input'
 import Image from 'next/image'
 import React from 'react'
+import { routes } from '@/config';
+import Link from 'next/link';
 
 function page() {
     return (
@@ -55,9 +58,9 @@ function page() {
 
                 <p className="text-center mt-5 text-gray-600 dark:text-gray-400 text-sm">
                     Аккаунт надоред?{' '}
-                    <span className="text-green-600 dark:text-green-500 font-bold cursor-pointer hover:underline">
+                    <Link href={routes.Register} className="text-green-600 dark:text-green-500 font-bold cursor-pointer hover:underline">
                         Бақайдгирӣ
-                    </span>
+                    </Link>
                 </p>
             </div>
         </section>

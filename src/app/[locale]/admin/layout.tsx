@@ -28,7 +28,7 @@ export default function RootLayout({
   const currentLocale = pathname.split("/")[1] || "tj";
   const currentPath = pathname.replace(/^\/(tj|ru|en)/, "") || "/";
   return (
-    <html lang="tg" className="h-full ">
+    <html lang="tg" className="h-full">
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
         <section className="flex min-h-screen bg-slate-50 dark:bg-black transition-colors duration-300">
 
@@ -76,10 +76,8 @@ export default function RootLayout({
             </div>
           </aside>
 
-          {/* CONTENT AREA: Ин қисм дар тарафи рост аст ва ҳаракат мекунад */}
           <main className="flex-1 ml-72 flex flex-col min-h-screen">
 
-            {/* Top Navbar */}
             <header className="h-16 border-b border-slate-200 dark:border-neutral-800 bg-white/80 dark:bg-black/80 backdrop-blur-md sticky top-0 z-30 flex items-center justify-between px-8">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
@@ -91,7 +89,6 @@ export default function RootLayout({
               </div>
             </header>
 
-            {/* Саҳифаи асосӣ */}
             <div className="p-8 flex-grow">
               <LayoutWrapper>
                 {children}
