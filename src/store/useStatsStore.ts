@@ -15,7 +15,7 @@ interface CelebrationEvent {
 }
 
 interface CelebrationState {
-  events: CelebrationEvent[]; // Ин массив аст
+  events: CelebrationEvent[]; 
   isLoading: boolean;
   fetchEvents: () => Promise<void>;
 }

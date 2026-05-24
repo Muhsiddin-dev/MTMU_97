@@ -12,6 +12,7 @@ import { Input } from '@/src/components/ui/input'
 function CelebrationsPage() {
     const [IsOpenDialogStatus, setIsOpenDialogStatus] = useState(false)
     const [IsOpenDialogDelete, setIsOpenDialogDelete] = useState(false)
+    const [IsOpenDialogEdit, setIsOpenDialogEdit] = useState(false)
     // Маълумоти намунавӣ (Mock Data)
     // const [events, setEvents] = useState([
     //     { id: 1, title: "Ғолибияти хонандагон дар олимпиада", description: "Хонандагони мактаби мо дар олимпиадаи шаҳрӣ сазовори ҷойҳои намоён гаштанд.", date: "25.04.2026", img: "" },
@@ -83,7 +84,7 @@ function CelebrationsPage() {
                                 </DialogContent>
                             </Dialog>
 
-                            <Dialog open={IsOpenDialogStatus} onOpenChange={setIsOpenDialogStatus}>
+                            <Dialog open={IsOpenDialogEdit} onOpenChange={setIsOpenDialogEdit}>
                                 <DialogTrigger><Pencil className=' text-green-600 hover:cursor-pointer hover:scale-90 transition-all duration-300' type="checkbox" /></DialogTrigger>
                                 <DialogContent>
                                     <DialogHeader>

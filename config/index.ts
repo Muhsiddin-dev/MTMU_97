@@ -11,6 +11,7 @@ export const routes = {
     Teachers: "/teachers",
     Celebrations: "/celebrations",
     About: "/about",
+    Admin: "/admin",
     Login: "/auth/login",
     Register: "/auth/register"
 }

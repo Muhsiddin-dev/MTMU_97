@@ -89,7 +89,7 @@ export default function RootLayout({
               </div>
             </header>
 
-            <div className="p-8 flex-grow">
+            <div className="p-8 grow">
               <LayoutWrapper>
                 {children}
               </LayoutWrapper>

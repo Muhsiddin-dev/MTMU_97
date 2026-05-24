@@ -21,7 +21,8 @@ export const Pages = {
     Teachers: "Омӯзгорон",
     Students: "Хонандагон",
     celebrations: 'Чашнхо',
-    About: "Дар бораи мо"
+    About: "Дар бораи мо",
+    Admin: "Админ панел"
 }
 const Header = () => {
     const pathname = usePathname();
@@ -97,6 +98,12 @@ const Header = () => {
                         <li className={`relative group cursor-pointer transition-colors duration-300 ${currentPath === "/about" ? "text-green-600" : "text-gray-700 dark:text-white hover:text-green-600 duration-300"}`}>
                             {Pages.About}
                             <span className={`absolute -bottom-1 left-0 h-0.5 bg-green-600 transition-all duration-300 ${currentPath === "/about" ? "w-full" : "w-0 group-hover:w-full"}`}></span>
+                        </li>
+                    </Link>
+                    <Link href={routes.Admin}>
+                        <li className={`relative group cursor-pointer transition-colors duration-300 ${currentPath === "/admin" ? "text-green-600" : "text-gray-700 dark:text-white hover:text-green-600 duration-300"}`}>
+                            {Pages.Admin}
+                            <span className={`absolute -bottom-1 left-0 h-0.5 bg-green-600 transition-all duration-300 ${currentPath === "/admin" ? "w-full" : "w-0 group-hover:w-full"}`}></span>
                         </li>
                     </Link>
 
@@ -233,6 +240,7 @@ const Header = () => {
                                         { href: "/teachers", label: Pages.Teachers },
                                         { href: "/celebrations", label: Pages.celebrations },
                                         { href: "/about", label: Pages.About },
+                                        { href: "/admin", label: Pages.About },
                                     ].map((link) => {
                                         const isActive = currentPath === link.href;
                                         return (
@@ -305,7 +313,7 @@ const Header = () => {
                                 </div>
                             </div>
 
-                            <div className="flex flex-col gap-2">
+                            {/* <div className="flex flex-col gap-2">
                                 <button
                                     onClick={() => setOpen(false)}
                                     className="w-full text-sm font-bold hover:border-green-600  text-gray-700 dark:text-gray-200 bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 py-3.5 rounded-2xl transition-all active:scale-[0.98] hover:bg-gray-50 dark:hover:bg-neutral-800"
@@ -318,6 +326,21 @@ const Header = () => {
                                 >
                                     Бақайдгирӣ
                                 </button>
+                            </div> */}
+
+                            <div className="flex items-center gap-2.5 p-2 rounded-xl transition-all hover:bg-green-100/50 dark:hover:bg-white/5 cursor-pointer">
+                                <div className="flex items-center justify-center w-10 h-10 rounded-full border border-green-500/30 bg-green-50 dark:bg-green-500/10">
+                                    <CircleUserRound
+                                        className="w-6 h-6 text-green-600 dark:text-green-500"
+                                        strokeWidth={1.5}
+                                    />
+                                </div>
+
+                                <div className="flex flex-col">
+                                    <h2 className="text-sm font-semibold text-gray-800 dark:text-gray-200 leading-none">
+                                        {"Muhsin Nazarov"}
+                                    </h2>
+                                </div>
                             </div>
                         </div>
                     </SheetContent>
