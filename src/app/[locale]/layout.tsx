@@ -78,6 +78,11 @@ export const metadata: Metadata = {
       'en-US': 'https://mtmu97.tj/en',
     },
   },
+  icons: {
+    icon: "/mtmu_97.png",
+    shortcut: "/mtmu_97.png",
+    apple: "/mtmu_97.png",
+  },
 };
 
 export default async function RootLayout({

@@ -11,7 +11,7 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/src/components/ui/sheet"
-import { ChevronDown, Menu } from 'lucide-react'
+import { ChevronDown, CircleUserRound, Menu } from 'lucide-react'
 import { AnimatedThemeToggler } from '../ui/animated-theme-toggler'
 import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger } from '@/src/components/ui/menubar'
 import { usePathname, useRouter } from 'next/navigation';
@@ -155,6 +155,21 @@ const Header = () => {
                             Бақайдгирӣ
                         </button>
                     </Link>
+
+                    {/* <div className="flex items-center gap-2.5 p-2 rounded-xl transition-all hover:bg-green-100/50 dark:hover:bg-white/5 cursor-pointer">
+                        <div className="flex items-center justify-center w-10 h-10 rounded-full border border-green-500/30 bg-green-50 dark:bg-green-500/10">
+                            <CircleUserRound
+                                className="w-6 h-6 text-green-600 dark:text-green-500"
+                                strokeWidth={1.5}
+                            />
+                        </div>
+
+                        <div className="flex flex-col">
+                            <h2 className="text-sm font-semibold text-gray-800 dark:text-gray-200 leading-none">
+                                {"Muhsin Nazarov"}
+                            </h2>
+                        </div>
+                    </div> */}
 
                 </div>
             </nav>
