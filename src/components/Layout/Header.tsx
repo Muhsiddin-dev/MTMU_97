@@ -11,7 +11,7 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/src/components/ui/sheet"
-import { ChevronDown, CircleUserRound, Menu } from 'lucide-react'
+import { ChevronDown, CircleUserRound, Menu, MoveLeft, MoveRight } from 'lucide-react'
 import { AnimatedThemeToggler } from '../ui/animated-theme-toggler'
 import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger } from '@/src/components/ui/menubar'
 import { usePathname, useRouter } from 'next/navigation';
@@ -100,12 +100,12 @@ const Header = () => {
                             <span className={`absolute -bottom-1 left-0 h-0.5 bg-green-600 transition-all duration-300 ${currentPath === "/about" ? "w-full" : "w-0 group-hover:w-full"}`}></span>
                         </li>
                     </Link>
-                    <Link href={routes.Admin}>
+                    {/* <Link href={routes.Admin}>
                         <li className={`relative group cursor-pointer transition-colors duration-300 ${currentPath === "/admin" ? "text-green-600" : "text-gray-700 dark:text-white hover:text-green-600 duration-300"}`}>
                             {Pages.Admin}
                             <span className={`absolute -bottom-1 left-0 h-0.5 bg-green-600 transition-all duration-300 ${currentPath === "/admin" ? "w-full" : "w-0 group-hover:w-full"}`}></span>
                         </li>
-                    </Link>
+                    </Link> */}
 
                 </ul>
 
@@ -151,7 +151,7 @@ const Header = () => {
                             </MenubarContent>
                         </MenubarMenu>
                     </Menubar>
-                    <AnimatedThemeToggler className='active:scale-85 duration-200' />
+                    <AnimatedThemeToggler className='active:scale-85 hover:cursor-pointer duration-200' />
                     <Link href={routes.Login}>
                         <button className="text-sm font-semibold text-gray-600 dark:text-gray-300 bg-transparent border border-gray-300/50 dark:border-neutral-800 px-5 py-2.5 rounded-2xl transition-all duration-300 hover:border-green-600 hover:text-green-600  dark:hover:text-green-500 dark:hover:border-green-500 hover:shadow-sm active:scale-95 cursor-pointer">
                             Ворид Шудан
@@ -240,7 +240,7 @@ const Header = () => {
                                         { href: "/teachers", label: Pages.Teachers },
                                         { href: "/celebrations", label: Pages.celebrations },
                                         { href: "/about", label: Pages.About },
-                                        { href: "/admin", label: Pages.About },
+                                        // { href: "/admin", label: Pages.About },
                                     ].map((link) => {
                                         const isActive = currentPath === link.href;
                                         return (
@@ -306,14 +306,22 @@ const Header = () => {
                                         </MenubarMenu>
                                     </Menubar>
 
-                                    <div className="flex items-center justify-between hover:border-green-600 border p-3.5 bg-gray-50 dark:bg-neutral-900 rounded-2xl  border-transparent dark:border-neutral-800/50">
-                                        <span className="text-sm font-bold dark:text-gray-300">Намуди зоҳирӣ</span>
+                                    <div className="group flex items-center justify-between p-3.5 bg-gray-50 dark:bg-neutral-900 rounded-2xl border border-transparent dark:border-neutral-800/50 hover:border-green-600 transition-all duration-300">
+
+                                        <div className="flex items-center gap-2 text-sm font-bold text-gray-700 dark:text-gray-300 transition-transform duration-300 group-hover:translate-x-2">
+                                            <span>Намуди зоҳирӣ</span>
+
+                                            <span className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-green-600">
+                                                <MoveRight size={18} />
+                                            </span>
+                                        </div>
+
                                         <AnimatedThemeToggler />
                                     </div>
                                 </div>
                             </div>
 
-                            {/* <div className="flex flex-col gap-2">
+                            <div className="flex flex-col gap-2">
                                 <button
                                     onClick={() => setOpen(false)}
                                     className="w-full text-sm font-bold hover:border-green-600  text-gray-700 dark:text-gray-200 bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 py-3.5 rounded-2xl transition-all active:scale-[0.98] hover:bg-gray-50 dark:hover:bg-neutral-800"
@@ -326,9 +334,9 @@ const Header = () => {
                                 >
                                     Бақайдгирӣ
                                 </button>
-                            </div> */}
+                            </div>
 
-                            <div className="flex items-center gap-2.5 p-2 rounded-xl transition-all hover:bg-green-100/50 dark:hover:bg-white/5 cursor-pointer">
+                            {/* <div className="flex items-center gap-2.5 p-2 rounded-xl transition-all hover:bg-green-100/50 dark:hover:bg-white/5 cursor-pointer">
                                 <div className="flex items-center justify-center w-10 h-10 rounded-full border border-green-500/30 bg-green-50 dark:bg-green-500/10">
                                     <CircleUserRound
                                         className="w-6 h-6 text-green-600 dark:text-green-500"
@@ -341,7 +349,7 @@ const Header = () => {
                                         {"Muhsin Nazarov"}
                                     </h2>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </SheetContent>
                 </Sheet>
