@@ -9,7 +9,7 @@ const navItems = [
   { icon: <PartyPopper size={18} />, label: "Ҷашнҳо", href: "/admin/celebrations" },
   { icon: <CircleUser size={18} />, label: "Омӯзгорон", href: "/admin/teachers" },
   { icon: <Users size={18} />, label: "Шогирдон", href: "/admin/students" },
-  { icon: <Info size={18} />, label: "Дар бораи мо", href: "/admin/students" },
+  { icon: <Info size={18} />, label: "Дар бораи мо", href: "/admin/about" },
 ];
 
 export default function AdminSidebar() {
