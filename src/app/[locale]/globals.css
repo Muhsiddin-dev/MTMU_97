@@ -1,8 +1,9 @@
 @import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
+/* @import "tw-animate-css"; */
+/* @import "shadcn/tailwind.css"; */
 
-@custom-variant dark (&:is(.dark *));
+/* 1. ИН САТР ХЕЛЕ МУҲИМ АСТ: Ба Tailwind v4 мефаҳмонад, ки класси .dark-ро гӯш кунад */
+@variant dark (&:where(.dark, .dark *));
 
 @theme inline {
   --color-background: var(--background);
@@ -88,7 +89,8 @@ body {
   --sidebar-ring: oklch(0.708 0 0);
 }
 
-.dark {
+/* 2. Ислоҳи селектор: Барои он ки متغیرҳо дар ҳолати торик 100% кор кунанд */
+.dark, [data-theme="dark"] {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -126,15 +128,18 @@ body {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
   }
 }
 
-::view-transition-old(root), ::view-transition-new(root) {
-    animation: none;
-    mix-blend-mode: normal;
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }
