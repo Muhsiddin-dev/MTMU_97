@@ -23,7 +23,7 @@ export default function AdministrationPage() {
                 <div className="absolute top-0 left-1/4 w-64 h-64 bg-green-50 rounded-full blur-3xl opacity-60 -z-10"></div>
                 <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-60 -z-10"></div>
 
-                <div className="max-w-7xl mx-auto">
+                <div className="max-w-350 p-3 mx-auto">
                     <div className="text-center mb-8 md:mb-10  space-y-4">
                         <h2 className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white tracking-tighter uppercase italic">
                             Роҳбарияти <span className="text-green-600">Мактаб</span>

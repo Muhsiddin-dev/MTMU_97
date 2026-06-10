@@ -1,11 +1,26 @@
 "use client"
 import { Input } from '@/src/components/ui/input'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import { routes } from '@/config';
 import Link from 'next/link';
+import { useAuthStore } from '@/src/store/useAuthStore';
 
-function page() {
+function Page() {
+    const { login } = useAuthStore()
+
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+    const handleLogin = async () => {
+        if (email != "" || password != "") {
+            login(email, password)
+        }
+        else {
+            console.log("Alo");
+        }
+    }
+
     return (
         <section className="min-h-screen bg-gray-50 dark:bg-[#0a0a0a] flex items-center justify-center p-3 pb-0 transition-colors duration-300">
             <div className="bg-white dark:bg-[#0f0f0f] border border-gray-100 dark:border-neutral-800 rounded-[2rem] shadow-2xl shadow-gray-200/50 dark:shadow-none p-8 md:p-11 max-w-md w-full transition-all">
@@ -15,6 +30,7 @@ function page() {
                         <Image
                             src="/mtmu_97.png"
                             alt="Logo"
+                            priority
                             width={50}
                             height={50}
                             className='w-full h-full rounded-xl '
@@ -30,6 +46,8 @@ function page() {
                     <div className="space-y-1">
                         <label className="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">Почтаи электронӣ</label>
                         <Input
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             type="email"
                             placeholder="example@gmail.com"
                             className="h-12 rounded-xl border-gray-200 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white focus:ring-green-500 transition-all"
@@ -39,6 +57,8 @@ function page() {
                     <div className="space-y-1">
                         <label className="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">Рамз</label>
                         <Input
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                             type="password"
                             placeholder="••••••••"
                             className="h-12 rounded-xl border-gray-200 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white focus:ring-green-500 transition-all"
@@ -52,7 +72,7 @@ function page() {
                     </div>
                 </div>
 
-                <button className="w-full mt-5 bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-2xl shadow-lg shadow-green-200/50 dark:shadow-none transition-all active:scale-[0.98] cursor-pointer">
+                <button onClick={() => handleLogin()} className="w-full mt-5 bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-2xl shadow-lg shadow-green-200/50 dark:shadow-none transition-all active:scale-[0.98] cursor-pointer">
                     Ворид шудан
                 </button>
 
@@ -67,4 +87,4 @@ function page() {
     )
 }
 
-export default page
+export default Page

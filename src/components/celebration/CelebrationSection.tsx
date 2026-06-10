@@ -13,8 +13,8 @@ function CelebrationSection() {
         { id: 3, title: "Маҷлиси падару модарон", description: "Дар муассиса маҷлиси умумии падару модарон оид ба натиҷаҳои таълим дар чоряки чорум ва омодагӣ ба имтиҳонҳои хатм баргузор гардад.", date: "10.05.2026", img: "/imagecopy.png" },
     ];
     return (
-        <section className={`pb-20  bg-gray-50 dark:bg-${Config.DarkColorProject} md:px-0 px-3`}>
-            <div className="max-w-7xl mx-auto ">
+        <section className={`pb-20  bg-gray-50 dark:bg-${Config.DarkColorProject} md:px-0 px-2`}>
+            <div className="max-w-[1400px] p-3 mx-auto ">
                 <div className="flex justify-between items-end mb-12">
                     <div>
                         <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Чашнхои охирин</h2>
@@ -33,7 +33,7 @@ function CelebrationSection() {
                             <div className="relative h-56 w-full overflow-hidden">
                                 {
                                     item.img ? (
-                                        <Image src={item.img} width={500} height={400} alt="" />
+                                        <Image src={item.img} width={500} height={400} alt={item.title} />
                                     ) : (
                                         <div className={`absolute inset-0 bg-gray-200 dark:bg-[#010101] animate-pulse group-hover:scale-110 transition-transform duration-500`} />
                                     )

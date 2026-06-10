@@ -1,13 +1,30 @@
+"use client"
 import { Input } from '@/src/components/ui/input'
 import { routes } from '@/config'
 import Image from 'next/image'
 import Link from "next/link";
-import React from 'react'
+import React, { useState } from 'react'
 
-function page() {
+function Page() {
+
+    const [email,setEmail] = useState("")
+    const [fullname,setFullname] = useState("")
+    const [patronymic,setPatronymic] = useState("")
+    const [password,setPassword] = useState("")
+
+    const handleRegister = async () => {
+        const newUser = {
+            email: email,
+            fullname: fullname,
+            patronymic: patronymic,
+            password: password,
+        }
+
+        
+    }
     return (
-        <section className="min-h-screen bg-gray-50 dark:bg-[#0a0a0a] flex items-center justify-center p-3 pb-0 transition-colors duration-300">
-            <div className="bg-white dark:bg-[#0f0f0f] border border-gray-100 dark:border-neutral-800 rounded-[2rem] shadow-2xl shadow-gray-200/50 dark:shadow-none p-8 md:p-11 max-w-md w-full transition-all">
+        <section className="min-h-screen bg-gray-50 dark:bg-[#0a0a0a] flex items-center justify-center p-3  pb-0 transition-colors duration-300">
+            <div className="bg-white dark:bg-[#0f0f0f] border border-gray-100 mb-10 mt-18  dark:border-neutral-800 rounded-[2rem] shadow-2xl shadow-gray-200/50 dark:shadow-none p-8 md:p-11 max-w-md w-full transition-all">
 
                 <div className="flex flex-col items-center mb-5">
                     <div className='bg-${Config.ColorProject} w-14 h-14 rounded-xl flex items-center justify-center shadow-lg shadow-green-100 dark:shadow-none'>
@@ -31,6 +48,22 @@ function page() {
                         <Input
                             type="email"
                             placeholder="example@gmail.com"
+                            className="h-12 rounded-xl border-gray-200 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white focus:ring-green-500 transition-all"
+                        />
+                    </div>
+                    <div className="space-y-1">
+                        <label className="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">Ному Насаб</label>
+                        <Input
+                            type="text"
+                            placeholder="Назаров Муҳсиддин"
+                            className="h-12 rounded-xl border-gray-200 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white focus:ring-green-500 transition-all"
+                        />
+                    </div>
+                    <div className="space-y-1">
+                        <label className="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">Очества</label>
+                        <Input
+                            type="text"
+                            placeholder="Номи падар"
                             className="h-12 rounded-xl border-gray-200 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white focus:ring-green-500 transition-all"
                         />
                     </div>
@@ -60,4 +93,4 @@ function page() {
     )
 }
 
-export default page
+export default Page

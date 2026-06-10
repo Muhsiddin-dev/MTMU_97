@@ -21,7 +21,7 @@ function StudentsSelect() {
             grade: "11",
             slogan: "Илм чароғи ақл аст",
             date: "01.05.2026",
-            img: "/student2.jpg"
+            img: "/IMG_0271.JPG"
         },
         {
             id: 3,
@@ -30,7 +30,7 @@ function StudentsSelect() {
             grade: "10",
             slogan: "Омӯзиш калиди муваффақият аст",
             date: "10.05.2026",
-            img: "/student3.jpg"
+            img: "/IMG_0271.JPG"
         },
         {
             id: 4,
@@ -39,12 +39,12 @@ function StudentsSelect() {
             grade: "9",
             slogan: "Тансиҳатӣ — давлати бебаҳо",
             date: "12.05.2026",
-            img: "/student4.jpg"
+            img: "/IMG_0271.JPG"
         }
     ];
     return (
         <section className={`pb-20 md:px-0 px-3  bg-gray-50 dark:bg-${Config.DarkColorProject}`}>
-            <div className="max-w-7xl mx-auto ">
+            <div className="max-w-350 p-3 mx-auto ">
                 <div className="flex md:flex-row flex-col justify-between md:items-end items-start md:gap-0 gap-4 mb-12">
                     <div>
                         <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Шогирдони Мо</h2>

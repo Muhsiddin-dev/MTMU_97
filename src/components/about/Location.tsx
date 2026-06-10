@@ -4,7 +4,7 @@ import React from 'react'
 function Location() {
     return (
         <div className={`bg-gray-50 dark:bg-${Config.DarkColorProject} md:px-0 px-3 py-5 md:min-h-screen`}>
-            <div className='max-w-7xl flex flex-col gap-5 w-full m-auto'>
+            <div className='max-w-350 p-3 flex flex-col gap-5 w-full m-auto'>
                 <div>
                     <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Макони Мо</h2>
                     <div className={`h-1 w-20 bg-${Config.ColorProject} mt-2`}></div>

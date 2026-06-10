@@ -16,7 +16,7 @@ export default function AdminSidebar() {
   const pathname = usePathname() || "";
 
   return (
-    <nav className="flex-grow overflow-y-auto custom-scrollbar">
+    <nav className="flex-grow  overflow-y-auto custom-scrollbar">
       <ul className="flex flex-col gap-1.5">
         {navItems.map((item, index) => {
           const isActive = pathname.endsWith(item.href);
@@ -24,6 +24,7 @@ export default function AdminSidebar() {
             <li key={index}>
               <Link
                 href={item.href}
+                // onClick={}
                 className={
                   "flex items-center gap-3 p-3 rounded-xl transition-all " +
                   (isActive

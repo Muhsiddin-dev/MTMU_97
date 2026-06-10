@@ -6,8 +6,8 @@ import { Pages } from './Header'
 
 const Footer = () => {
   return (
-    <footer className={` px-3 py-6 bg-white dark:border-t dark:border-neutral-800 dark:bg-${Config.DarkColorProject} font-sans border border-t-gray-100 `}>
-      <div className='flex md:flex-row flex-col  md:gap-0 gap-5 max-w-7xl m-auto justify-between items-start sm:items-center sm:text-center md:text-left'>
+    <footer className={` px-2.5 py-6 bg-white dark:border-t dark:border-neutral-800 dark:bg-${Config.DarkColorProject} font-sans border border-t-gray-100  `}>
+      <div className='flex md:flex-row flex-col  md:gap-0 gap-5 max-w-350 p-3 m-auto justify-between items-start sm:items-center sm:text-center md:text-left'>
         <div className='flex flex-col sm:items-center md:items-start  gap-5'>
           <Link href={routes.Home}>
             <div className='flex items-center gap-2.5 cursor-pointer'>
@@ -95,7 +95,7 @@ const Footer = () => {
         <div>
           <h1 className='text-black dark:text-white font-semibold '>Тамос</h1>
           <ul className='text-black dark:text-white ml-3 space-y-2'>
-            <li className='cursor-pointer text-sm hover:text-green-600 duration-300 '><a href="m_t_m_u_97@gmail.com">m_t_m_u_97@gmail.com</a></li>
+            <li className='cursor-pointer text-sm hover:text-green-600 duration-300 '><a href="info:muhsinnazarov21@gmail.com">muhsinnazarov21@gmail.com</a></li>
             <li className='cursor-pointer text-sm hover:text-green-600 duration-300'>(+992) 907195993</li>
             <li className='cursor-pointer text-sm hover:text-green-600 duration-300'>Н.Сино, Куч.Обoдкорон</li>
           </ul>

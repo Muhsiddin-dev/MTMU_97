@@ -19,7 +19,7 @@ export default function SwipperAboutSection() {
 
   return (
     <div className={`w-full md:px-0 px-3 py-10 bg-gray-50  dark:bg-${Config.DarkColorProject}`}>
-      <div className="max-w-7xl m-auto ">
+      <div className="max-w-350 p-3 m-auto ">
         <Swiper
           modules={[Autoplay, Pagination, Navigation]}
           spaceBetween={20} // Фосилаи байни суратҳо

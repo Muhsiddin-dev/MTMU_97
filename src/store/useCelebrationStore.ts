@@ -27,9 +27,7 @@ export const useCelebrationStore = create<CelebrationState>((set) => ({
     set({ isLoading: true });
     try {
       const response = await getCelebrations();
-      
       const eventsData = response?.data || (Array.isArray(response) ? response : []);
-      
       set({ 
         events: eventsData, 
         isLoading: false 

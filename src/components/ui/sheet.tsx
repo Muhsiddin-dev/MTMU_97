@@ -20,7 +20,7 @@ function SheetTrigger({
 function SheetClose({
   ...props
 }: React.ComponentProps<typeof SheetPrimitive.Close>) {
-  return <SheetPrimitive.Close data-slot="sheet-close" {...props} />
+  return <SheetPrimitive.Close  data-slot="sheet-close" {...props} />
 }
 
 function SheetPortal({
@@ -75,8 +75,7 @@ function SheetContent({
               className="absolute top-3 right-3"
               size="icon-sm"
             >
-              <XIcon
-              />
+              <XIcon className="text-white"/>
               <span className="sr-only">Close</span>
             </Button>
           </SheetPrimitive.Close>

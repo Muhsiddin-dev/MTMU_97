@@ -46,8 +46,8 @@ const Header = () => {
         router.push(newPath);
     };
     return (
-        <header className={`fixed font-sans top-0 left-0 right-0 z-50 bg-white/80 dark:bg-${Config.DarkColorProject} backdrop-blur-md   border-b border-green-100 dark:border-b dark:border-gray-900 dark:shadow-sm`}>
-            <nav className='md:flex hidden max-w-7xl mx-auto justify-between items-center py-3 '>
+        <header className={`fixed font-sans top-0 left-0 right-0 z-50 bg-white/80 dark:bg-${Config.DarkColorProject} backdrop-blur-md   border-b border-green-100 dark:border-b dark:border-gray-900 dark:shadow-sm px-1.5`}>
+            <nav className='md:flex hidden max-w-350 p-3 mx-auto justify-between items-center py-3 '>
 
                 <Link href={routes.Home}>
                     <div className='flex items-center gap-3 cursor-pointer'>
@@ -56,6 +56,7 @@ const Header = () => {
                                 src="/mtmu_97.png"
                                 alt="Logo"
                                 width={50}
+                                priority
                                 height={50}
                                 className='w-full h-full rounded-xl '
                             />
@@ -188,6 +189,7 @@ const Header = () => {
                                 src="/mtmu_97.png"
                                 alt="Logo"
                                 width={45}
+                                priority
                                 height={45}
                                 className='w-full h-full rounded-xl '
                             />
@@ -217,6 +219,7 @@ const Header = () => {
                                 <Image
                                     src="/mtmu_97.png"
                                     alt="Logo"
+                                    priority
                                     width={48}
                                     height={48}
                                     className="object-cover w-full h-full"
