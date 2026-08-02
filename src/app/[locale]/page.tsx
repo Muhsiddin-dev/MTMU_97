@@ -5,6 +5,8 @@ import SwipperAboutSection from "@/src/components/Swipper/SwipperAbout/SwipperAb
 import TeachersSection from "@/src/components/Teachers/TeachersSection";
 import Image from "next/image";
 import CelebrationSection from "@/src/components/celebration/CelebrationSection";
+import star from './../../components/star/star';
+import Star from "./../../components/star/star";
 async function delay(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -20,6 +22,7 @@ export default async function Home() {
       <CelebrationSection />
       <TeachersSection />
       <StudentsSelect />
+      <Star />
     </>
   );
 }

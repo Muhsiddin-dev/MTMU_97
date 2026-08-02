@@ -13,7 +13,10 @@ export const routes = {
     About: "/about",
     Admin: "/admin",
     Login: "/auth/login",
-    Register: "/auth/register"
+    Register: "/auth/register",
+    Students: "/students",
+    Student: "/student",
+    Vacansi: "/vacansies"
 }
 
 export const UrlApi = {

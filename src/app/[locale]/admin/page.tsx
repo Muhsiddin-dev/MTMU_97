@@ -30,7 +30,12 @@ export default function page() {
         <Card
           icon={<Star size={26} className="text-yellow-600 dark:text-yellow-400" />}
           title={85}
-          description="Рейтинг"
+          description="Каментария"
+        />
+        <Card
+          icon={<Star size={26} className="text-red-600 dark:text-red-400" />}
+          title={10}
+          description="Каментария Рад шуда"
         />
         <Card
           icon={<Users size={26} className="text-rose-600 dark:text-rose-400" />}

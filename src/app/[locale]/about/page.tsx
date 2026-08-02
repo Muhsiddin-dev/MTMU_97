@@ -5,6 +5,7 @@ import HeroSectionAbout from '@/src/components/about/HeroSectionAbout'
 import React from 'react'
 import SwipperAboutSection from '@/src/components/Swipper/SwipperAbout/SwipperAboutSection'
 import SectionAboutSchool from '@/src/components/about/SectionAboutSchool'
+import Star from '@/src/components/star/star'
 
 
 async function delay(ms: number) {
@@ -19,6 +20,7 @@ async function page() {
       <Stats />
       <SectionAboutSchool />
       <SwipperAboutSection />
+      <Star />
       <Location />
     </>
   )

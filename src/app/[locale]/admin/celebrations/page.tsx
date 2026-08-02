@@ -68,7 +68,8 @@ function CelebrationsPage() {
                         </div>
                         <div className='px-6 pb-2 flex items-center justify-between'>
                             <Dialog open={IsOpenDialogStatus} onOpenChange={setIsOpenDialogStatus}>
-                                <DialogTrigger><input className='size-4 text-red-600 hover:cursor-pointer hover:scale-90 transition-all duration-300' type="checkbox" /></DialogTrigger><DialogContent>
+                                <DialogTrigger><input className='size-4 text-red-600 hover:cursor-pointer hover:scale-90 transition-all duration-300' type="checkbox" /></DialogTrigger>
+                                <DialogContent>
                                     <DialogHeader>
                                         <DialogTitle className='line-clamp-2 text-xl font-bold'>
                                             {item.name}

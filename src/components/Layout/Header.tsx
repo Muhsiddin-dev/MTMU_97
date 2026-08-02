@@ -22,7 +22,11 @@ export const Pages = {
     Students: "Хонандагон",
     celebrations: 'Чашнхо',
     About: "Дар бораи мо",
-    Admin: "Админ панел"
+    Admin: "Админ панел",
+    student: 'Кабули хонанда',
+    students: 'Хонандахо',
+    Vacansi: 'Вакансияҳо',
+
 }
 const Header = () => {
     const pathname = usePathname();

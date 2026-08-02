@@ -1,5 +1,5 @@
 import React from 'react'
-import { Users, GraduationCap, School, Award } from 'lucide-react'
+import { Users, GraduationCap, School, Award, Star } from 'lucide-react'
 import { Config } from '@/config'
 import { NumberTicker } from '../ui/number-ticker'
 
@@ -14,7 +14,7 @@ function Stats() {
                             { id: 1, label: 'Таҷриба', value: 13, suffix: 'сол', Icon: Award },
                             { id: 2, label: 'Хонандагон', value: 1200, suffix: '+', Icon: Users },
                             { id: 3, label: 'Омӯзгорон', value: 85, suffix: '+', Icon: GraduationCap },
-                            { id: 4, label: 'Синфхонаҳо', value: 40, suffix: '+', Icon: School },
+                            { id: 4, label: 'Рейтинг', value: 82, suffix: '%', Icon: Star },
                         ].map(({ id, label, value, suffix, Icon }) => (
                             <div key={id} className="space-y-3 px-4 flex flex-col items-center group border-gray-100 dark:border-neutral-800 border-r last:border-r-0 odd:border-r">
                                 <div className="p-3 rounded-2xl bg-green-50 dark:bg-green-500/10 text-green-600 dark:text-green-500 group-hover:scale-110 transition-transform">

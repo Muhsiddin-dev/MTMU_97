@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { CircleUser, Info, PartyPopper, SquareDashedKanbanIcon, Users } from "lucide-react";
+import { CircleUser, Info, PartyPopper, SquareDashedKanbanIcon, Star, Users } from "lucide-react";
 
 const navItems = [
   { icon: <SquareDashedKanbanIcon size={18} />, label: "Дашбоард", href: "/admin" },
   { icon: <PartyPopper size={18} />, label: "Ҷашнҳо", href: "/admin/celebrations" },
   { icon: <CircleUser size={18} />, label: "Омӯзгорон", href: "/admin/teachers" },
   { icon: <Users size={18} />, label: "Шогирдон", href: "/admin/students" },
+  { icon: <Star size={18} />, label: "Каментария", href: "/admin/stars" },
   { icon: <Info size={18} />, label: "Дар бораи мо", href: "/admin/about" },
 ];
 
@@ -24,7 +25,6 @@ export default function AdminSidebar() {
             <li key={index}>
               <Link
                 href={item.href}
-                // onClick={}
                 className={
                   "flex items-center gap-3 p-3 rounded-xl transition-all " +
                   (isActive
